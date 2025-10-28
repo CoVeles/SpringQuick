@@ -2,6 +2,7 @@ package org.example.config;
 
 import org.example.beans.Parrot;
 import org.example.beans.Person;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -23,10 +24,11 @@ public class ProjectConfig {
     }
 
     @Bean
-    public Person person(Parrot parrot2){
+    public Person person(
+            @Qualifier("parrot2") Parrot parrot){
         Person person = new Person();
         person.setName("Lili");
-        person.setParrot(parrot2);
+        person.setParrot(parrot);
         return person;
     }
 }
