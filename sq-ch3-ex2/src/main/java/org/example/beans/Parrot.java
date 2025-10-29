@@ -2,7 +2,7 @@ package org.example.beans;
 
 public class Parrot {
 
-    private String name = "Koko";
+    private String name;
 
     public String getName() {
         return name;
